@@ -1,991 +1,3843 @@
 <!DOCTYPE html>
+
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Metal & Hard Rock Radios</title>
+
+    <title>Metal & Hard Rock Radios + Flappy Beer</title>
+
     <meta name="apple-mobile-web-app-capable" content="yes">
+
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
     <meta name="apple-mobile-web-app-title" content="Metal Radios">
-    
-    <!-- Icône Tête de Mort pour l'écran d'accueil iPhone -->
-    <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='112' fill='%230e0e12'/><rect width='500' height='500' x='6' y='6' rx='106' fill='none' stroke='%23ff2a2a' stroke-width='6' stroke-opacity='0.4'/><path d='M128 230 C128 110 384 110 384 230' fill='none' stroke='%232a2a36' stroke-width='28' stroke-linecap='round'/><path d='M140 230 C140 125 372 125 372 230' fill='none' stroke='%23ff2a2a' stroke-width='10' stroke-linecap='round'/><rect x='96' y='210' width='44' height='96' rx='22' fill='%231f1f2a' stroke='%23ff2a2a' stroke-width='6'/><rect x='372' y='210' width='44' height='96' rx='22' fill='%231f1f2a' stroke='%23ff2a2a' stroke-width='6'/><path d='M160 210 C160 140 352 140 352 210 C352 260 330 280 320 310 L192 310 C182 280 160 260 160 210 Z' fill='%23e6e8f0'/><ellipse cx='206' cy='225' rx='32' ry='36' fill='%230b0b0d'/><ellipse cx='306' cy='225' rx='32' ry='36' fill='%230b0b0d'/><circle cx='216' cy='215' r='8' fill='%23ff2a2a'/><circle cx='316' cy='215' r='8' fill='%23ff2a2a'/><path d='M256 262 L244 280 C244 286 268 286 268 280 Z' fill='%230b0b0d'/><path d='M200 310 L200 350 C200 365 312 365 312 350 L312 310 Z' fill='%23e6e8f0'/><line x1='222' y1='318' x2='222' y2='348' stroke='%230b0b0d' stroke-width='5' stroke-linecap='round'/><line x1='245' y1='318' x2='245' y2='352' stroke='%230b0b0d' stroke-width='5' stroke-linecap='round'/><line x1='267' y1='318' x2='267' y2='352' stroke='%230b0b0d' stroke-width='5' stroke-linecap='round'/><line x1='290' y1='318' x2='290' y2='348' stroke='%230b0b0d' stroke-width='5' stroke-linecap='round'/><line x1='195' y1='330' x2='317' y2='330' stroke='%230b0b0d' stroke-width='5'/></svg>">
+
+
+
+    <!-- IcÃ´ne TÃªte de Mort HD pour l'Ã©cran d'accueil iPhone -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='112' fill='%230e0e12'/><rect width='500' height='500' x='6' y='6' rx='106' fill='none' stroke='%23ff2a2a' stroke-width='8' stroke-opacity='0.6'/><path d='M128 230 C128 110 384 110 384 230' fill='none' stroke='%232a2a36' stroke-width='28' stroke-linecap='round'/><path d='M140 230 C140 125 372 125 372 230' fill='none' stroke='%23ff2a2a' stroke-width='10' stroke-linecap='round'/><rect x='96' y='210' width='44' height='96' rx='22' fill='%231f1f2a' stroke='%23ff2a2a' stroke-width='6'/><rect x='372' y='210' width='44' height='96' rx='22' fill='%231f1f2a' stroke='%23ff2a2a' stroke-width='6'/><path d='M160 210 C160 140 352 140 352 210 C352 260 330 280 320 310 L192 310 C182 280 160 260 160 210 Z' fill='%23e6e8f0'/><ellipse cx='206' cy='225' rx='32' ry='36' fill='%230b0b0d'/><ellipse cx='306' cy='225' rx='32' ry='36' fill='%230b0b0d'/><circle cx='216' cy='215' r='8' fill='%23ff2a2a'/><circle cx='316' cy='215' r='8' fill='%23ff2a2a'/><path d='M256 262 L244 280 C244 286 268 286 268 280 Z' fill='%230b0b0d'/><path d='M200 310 L200 350 C200 365 312 365 312 350 L312 310 Z' fill='%23e6e8f0'/><line x1='222' y1='318' x2='222' y2='348' stroke='%230b0b0d' stroke-width='5' stroke-linecap='round'/><line x1='245' y1='318' x2='245' y2='352' stroke='%230b0b0d' stroke-width='5' stroke-linecap='round'/><line x1='267' y1='318' x2='267' y2='352' stroke='%230b0b0d' stroke-width='5' stroke-linecap='round'/><line x1='290' y1='318' x2='290' y2='348' stroke='%230b0b0d' stroke-width='5' stroke-linecap='round'/><line x1='195' y1='330' x2='317' y2='330' stroke='%230b0b0d' stroke-width='5'/></svg>">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='112' fill='%230e0e12'/><rect width='500' height='500' x='6' y='6' rx='106' fill='none' stroke='%23ff2a2a' stroke-width='8' stroke-opacity='0.6'/><path d='M128 230 C128 110 384 110 384 230' fill='none' stroke='%232a2a36' stroke-width='28' stroke-linecap='round'/><path d='M140 230 C140 125 372 125 372 230' fill='none' stroke='%23ff2a2a' stroke-width='10' stroke-linecap='round'/><rect x='96' y='210' width='44' height='96' rx='22' fill='%231f1f2a' stroke='%23ff2a2a' stroke-width='6'/><rect x='372' y='210' width='44' height='96' rx='22' fill='%231f1f2a' stroke='%23ff2a2a' stroke-width='6'/><path d='M160 210 C160 140 352 140 352 210 C352 260 330 280 320 310 L192 310 C182 280 160 260 160 210 Z' fill='%23e6e8f0'/><ellipse cx='206' cy='225' rx='32' ry='36' fill='%230b0b0d'/><ellipse cx='306' cy='225' rx='32' ry='36' fill='%230b0b0d'/><circle cx='216' cy='215' r='8' fill='%23ff2a2a'/><circle cx='316' cy='215' r='8' fill='%23ff2a2a'/><path d='M256 262 L244 280 C244 286 268 286 268 280 Z' fill='%230b0b0d'/><path d='M200 310 L200 350 C200 365 312 365 312 350 L312 310 Z' fill='%23e6e8f0'/><line x1='222' y1='318' x2='222' y2='348' stroke='%230b0b0d' stroke-width='5' stroke-linecap='round'/><line x1='245' y1='318' x2='245' y2='352' stroke='%230b0b0d' stroke-width='5' stroke-linecap='round'/><line x1='267' y1='318' x2='267' y2='352' stroke='%230b0b0d' stroke-width='5' stroke-linecap='round'/><line x1='290' y1='318' x2='290' y2='348' stroke='%230b0b0d' stroke-width='5' stroke-linecap='round'/><line x1='195' y1='330' x2='317' y2='330' stroke='%230b0b0d' stroke-width='5'/></svg>">
+
+
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
-    
+
+
+
+    <!-- SDK Firebase pour la synchronisation Cloud en temps rÃ©el -->
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+
+
     <style>
+
         * {
+
             box-sizing: border-box;
+
             margin: 0;
+
             padding: 0;
+
             font-family: 'Montserrat', sans-serif;
+
             -webkit-tap-highlight-color: transparent;
+
         }
+
+
 
         body {
+
             background-color: #0b0b0d;
+
             color: #f0f0f5;
-            padding-bottom: 170px;
+
+            padding-bottom: 220px;
+
+            overflow-x: hidden;
+
         }
+
+
 
         header {
+
             background: linear-gradient(135deg, #151519 0%, #050507 100%);
+
             padding: 16px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             gap: 12px;
+
             border-bottom: 2px solid #ff2a2a;
+
             position: sticky;
+
             top: 0;
+
             z-index: 100;
+
         }
+
+
 
         .header-logo {
-            width: 38px;
-            height: 38px;
+
+            width: 36px;
+
+            height: 36px;
+
             flex-shrink: 0;
+
         }
+
+
 
         header h1 {
-            font-size: 1.4rem;
+
+            font-size: 1.3rem;
+
             font-weight: 900;
+
             text-transform: uppercase;
+
             letter-spacing: 1px;
+
             color: #ffffff;
+
         }
+
+
 
         header h1 span {
+
             color: #ff2a2a;
+
         }
+
+
 
         .controls-container {
-            padding: 16px;
+
+            padding: 14px 16px;
+
             background: #121216;
+
             display: flex;
+
             flex-direction: column;
-            gap: 12px;
+
+            gap: 10px;
+
             max-width: 600px;
+
             margin: 0 auto;
+
         }
+
+
 
         .search-box {
+
             position: relative;
+
             width: 100%;
+
         }
+
+
 
         .search-box input {
+
             width: 100%;
-            padding: 12px 16px 12px 42px;
+
+            padding: 10px 14px 10px 40px;
+
             background: #1c1c24;
+
             border: 1px solid #2a2a36;
+
             border-radius: 12px;
+
             color: #fff;
-            font-size: 0.95rem;
+
+            font-size: 0.9rem;
+
             outline: none;
+
             transition: border-color 0.2s;
+
         }
+
+
 
         .search-box input:focus {
+
             border-color: #ff2a2a;
+
         }
+
+
 
         .search-box svg {
+
             position: absolute;
-            left: 14px;
+
+            left: 12px;
+
             top: 50%;
+
             transform: translateY(-50%);
+
             width: 18px;
+
             height: 18px;
+
             fill: #7a7a8c;
+
         }
 
-        .filter-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-        }
+
 
         .filter-tabs {
+
             display: flex;
+
             gap: 8px;
+
+            flex-wrap: wrap;
+
         }
+
+
 
         .tab-btn {
+
             background: #1c1c24;
+
             border: 1px solid #2a2a36;
+
             color: #8a8a9e;
+
             padding: 8px 14px;
+
             border-radius: 20px;
-            font-size: 0.8rem;
+
+            font-size: 0.78rem;
+
             font-weight: 700;
+
             cursor: pointer;
+
             transition: all 0.2s;
+
             display: flex;
+
             align-items: center;
+
             gap: 6px;
+
         }
+
+
 
         .tab-btn.active {
+
             background: #ff2a2a;
+
             border-color: #ff2a2a;
+
             color: #ffffff;
+
         }
+
+
 
         .tab-btn svg {
+
             width: 14px;
+
             height: 14px;
+
             fill: currentColor;
+
         }
 
-        .add-radio-trigger {
-            background: #ff2a2a;
-            color: white;
-            border: none;
-            padding: 8px 14px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: background 0.2s;
-        }
 
-        .add-radio-trigger:hover {
-            background: #e02222;
-        }
-
-        /* Modal d'ajout de radio */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(6px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            padding: 20px;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal-card {
-            background: #16161d;
-            border: 1px solid #2a2a3a;
-            border-radius: 16px;
-            width: 100%;
-            max-width: 450px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-        }
-
-        .modal-title {
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: #fff;
-        }
-
-        .close-modal-btn {
-            background: transparent;
-            border: none;
-            color: #8a8a9e;
-            font-size: 1.5rem;
-            cursor: pointer;
-            line-height: 1;
-        }
-
-        .form-group {
-            margin-bottom: 12px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: #a0a0b5;
-            text-transform: uppercase;
-            margin-bottom: 6px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px 14px;
-            background: #1c1c24;
-            border: 1px solid #2a2a36;
-            border-radius: 8px;
-            color: #fff;
-            font-size: 0.9rem;
-            outline: none;
-        }
-
-        .form-group input:focus {
-            border-color: #ff2a2a;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 12px;
-            background: #ff2a2a;
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            font-weight: 800;
-            font-size: 0.95rem;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background 0.2s;
-        }
 
         .container {
+
             max-width: 600px;
+
             margin: 0 auto;
-            padding: 12px 16px;
+
+            padding: 10px 16px;
+
         }
+
+
 
         .section-title {
-            font-size: 0.85rem;
+
+            font-size: 0.82rem;
+
             text-transform: uppercase;
+
             letter-spacing: 1.2px;
+
             color: #8a8a9e;
-            margin: 16px 0 10px 4px;
+
+            margin: 12px 0 10px 4px;
+
             font-weight: 700;
+
         }
+
+
 
         .radio-grid {
+
             display: grid;
+
             grid-template-columns: 1fr;
-            gap: 12px;
+
+            gap: 10px;
+
         }
+
+
 
         .radio-card {
+
             background: #141418;
+
             border: 1px solid #22222d;
+
             border-radius: 14px;
-            padding: 14px;
+
+            padding: 10px 12px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
             transition: transform 0.15s, border-color 0.15s;
+
+            width: 100%;
+
         }
+
+
 
         .radio-card:active {
+
             transform: scale(0.98);
+
         }
+
+
 
         .radio-card.playing {
+
             border-color: #ff2a2a;
+
             background: #1a1215;
+
         }
+
+
 
         .radio-info {
+
             display: flex;
+
             align-items: center;
-            gap: 14px;
+
+            gap: 12px;
+
             overflow: hidden;
+
             flex: 1;
+
             cursor: pointer;
+
         }
+
+
 
         .radio-logo {
-            width: 55px;
-            height: 55px;
+
+            width: 48px;
+
+            height: 48px;
+
             border-radius: 10px;
+
             object-fit: contain;
+
             background: #1b1b22;
+
             border: 1px solid #2a2a36;
-            padding: 4px;
+
+            padding: 3px;
+
             flex-shrink: 0;
+
         }
+
+
 
         .radio-text {
+
             overflow: hidden;
+
         }
+
+
 
         .radio-name {
+
             font-weight: 800;
-            font-size: 1.02rem;
+
+            font-size: 0.95rem;
+
             color: #fff;
-            margin-bottom: 4px;
+
+            margin-bottom: 2px;
+
             white-space: nowrap;
+
             overflow: hidden;
+
             text-overflow: ellipsis;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+
         }
 
-        .custom-badge {
-            background: #2a2a3a;
-            color: #aaa;
-            font-size: 0.65rem;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
+
 
         .radio-genre {
-            font-size: 0.76rem;
+
+            font-size: 0.72rem;
+
             color: #ff2a2a;
+
             text-transform: uppercase;
+
             font-weight: 600;
+
             letter-spacing: 0.5px;
+
         }
+
+
 
         .card-actions {
+
             display: flex;
+
             align-items: center;
-            gap: 6px;
+
+            gap: 4px;
+
         }
 
-        .fav-btn, .delete-btn {
+
+
+        .action-btn {
+
             background: transparent;
+
             border: none;
+
             cursor: pointer;
-            padding: 6px;
+
+            padding: 5px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
-            border-radius: 50%;
+
         }
 
-        .fav-btn svg {
-            width: 22px;
-            height: 22px;
-            fill: #3a3a4c;
+
+
+        .action-btn svg {
+
+            width: 18px;
+
+            height: 18px;
+
+            fill: #4a4a5c;
+
             transition: fill 0.2s;
+
         }
+
+
 
         .fav-btn.is-fav svg {
+
             fill: #ffb703;
+
         }
 
-        .delete-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: #5a5a6e;
-            transition: fill 0.2s;
+
+
+        .edit-btn:hover svg {
+
+            fill: #00b4d8;
+
         }
+
+
 
         .delete-btn:hover svg {
+
             fill: #ff2a2a;
+
         }
+
+
 
         .play-btn {
+
             background: #ff2a2a;
+
             color: white;
+
             border: none;
-            width: 44px;
-            height: 44px;
+
+            width: 38px;
+
+            height: 38px;
+
             border-radius: 50%;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             cursor: pointer;
+
             flex-shrink: 0;
+
             box-shadow: 0 4px 12px rgba(255, 42, 42, 0.3);
+
             transition: background 0.2s;
+
+            margin-left: 4px;
+
         }
+
+
 
         .play-btn svg {
-            width: 18px;
-            height: 18px;
+
+            width: 15px;
+
+            height: 15px;
+
             fill: white;
+
             margin-left: 2px;
+
         }
+
+
 
         .radio-card.playing .play-btn svg {
+
             margin-left: 0;
+
         }
+
+
+
+        /* FenÃªtres Modales */
+
+        .modal {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background: rgba(0,0,0,0.85);
+
+            backdrop-filter: blur(8px);
+
+            z-index: 3000;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+        }
+
+
+
+        .modal.active {
+
+            display: flex;
+
+        }
+
+
+
+        .modal-content {
+
+            background: #14141a;
+
+            border: 1px solid #2a2a38;
+
+            border-radius: 16px;
+
+            padding: 20px;
+
+            width: 100%;
+
+            max-width: 450px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+
+        }
+
+
+
+        .modal-title {
+
+            font-weight: 900;
+
+            font-size: 1.05rem;
+
+            text-transform: uppercase;
+
+            color: #fff;
+
+            border-bottom: 1px solid #22222e;
+
+            padding-bottom: 10px;
+
+        }
+
+
+
+        .modal-input {
+
+            width: 100%;
+
+            padding: 10px 14px;
+
+            background: #1c1c24;
+
+            border: 1px solid #2a2a36;
+
+            border-radius: 10px;
+
+            color: #fff;
+
+            font-size: 0.88rem;
+
+            outline: none;
+
+        }
+
+
+
+        .modal-buttons {
+
+            display: flex;
+
+            gap: 10px;
+
+            margin-top: 6px;
+
+        }
+
+
+
+        .btn-submit {
+
+            background: #ff2a2a;
+
+            color: #fff;
+
+            border: none;
+
+            padding: 10px;
+
+            border-radius: 10px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            flex: 1;
+
+        }
+
+
+
+        .btn-cancel {
+
+            background: #2a2a36;
+
+            color: #8a8a9e;
+
+            border: none;
+
+            padding: 10px;
+
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            flex: 1;
+
+        }
+
+
+
+        /* Pop-up Humoristique (Alerte Non-Metal) */
+
+        .funny-alert {
+
+            position: fixed;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform: translate(-50%, -50%) scale(0.9);
+
+            background: #1c0a0d;
+
+            border: 2px solid #ff2a2a;
+
+            border-radius: 16px;
+
+            padding: 24px 20px;
+
+            text-align: center;
+
+            z-index: 4000;
+
+            display: none;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 12px;
+
+            max-width: 330px;
+
+            width: 90%;
+
+            box-shadow: 0 0 40px rgba(255, 42, 42, 0.5);
+
+        }
+
+
+
+        .funny-alert.active {
+
+            display: flex;
+
+            animation: alertPop 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+
+        }
+
+
+
+        @keyframes alertPop {
+
+            to { transform: translate(-50%, -50%) scale(1); }
+
+        }
+
+
+
+        .funny-alert h3 {
+
+            color: #ff2a2a;
+
+            font-weight: 900;
+
+            font-size: 1.1rem;
+
+            text-transform: uppercase;
+
+        }
+
+
+
+        .funny-alert p {
+
+            color: #f0f0f5;
+
+            font-size: 0.85rem;
+
+            line-height: 1.4;
+
+        }
+
+
+
+        .funny-alert button {
+
+            background: #ff2a2a;
+
+            color: #fff;
+
+            border: none;
+
+            padding: 8px 20px;
+
+            border-radius: 20px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            margin-top: 6px;
+
+        }
+
+
+
+        /* Section Flappy Beer centrÃ©e et ajustÃ©e pour mobile */
+
+        .flappy-section {
+
+            max-width: 600px;
+
+            margin: 20px auto 10px auto;
+
+            padding: 0 16px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+        }
+
+
+
+        .game-container {
+
+            position: relative;
+
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(241, 196, 15, 0.2);
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            border: 3px solid rgba(255, 215, 0, 0.3);
+
+            width: 100%;
+
+            background: #1a0f07;
+
+        }
+
+
+
+        #gameCanvas {
+
+            display: block;
+
+            width: 100%;
+
+            height: auto;
+
+            aspect-ratio: 900 / 500;
+
+            background-color: #1a0f07;
+
+            cursor: pointer;
+
+        }
+
+
+
+        .instructions {
+
+            margin-top: 10px;
+
+            font-size: 14px;
+
+            color: #d1d8e0;
+
+            text-align: center;
+
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+
+        }
+
+
+
+        kbd {
+
+            background: #f1c40f;
+
+            color: #111;
+
+            padding: 3px 8px;
+
+            border-radius: 4px;
+
+            font-weight: bold;
+
+        }
+
+
+
+        @media (max-width: 650px) {
+
+            .flappy-section {
+
+                padding: 0 8px;
+
+            }
+
+            .game-container {
+
+                width: 104%;
+
+                margin-left: -2%;
+
+            }
+
+        }
+
+
 
         /* Player fixe en bas */
+
         .fixed-player {
+
             position: fixed;
+
             bottom: 0;
+
             left: 0;
+
             width: 100%;
+
             background: rgba(18, 18, 22, 0.98);
+
             backdrop-filter: blur(20px);
+
             -webkit-backdrop-filter: blur(20px);
+
             border-top: 1px solid #2a2a38;
-            padding: 12px 18px;
+
+            padding: 10px 16px;
+
             display: none;
+
             flex-direction: column;
-            gap: 10px;
+
+            gap: 8px;
+
             z-index: 1000;
+
             box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
+
         }
+
+
 
         .fixed-player.active {
+
             display: flex;
+
         }
+
+
 
         .player-main {
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
         }
+
+
 
         .player-left {
+
             display: flex;
+
             align-items: center;
+
             gap: 12px;
+
             overflow: hidden;
+
             flex: 1;
-            margin-right: 15px;
+
+            margin-right: 12px;
+
         }
+
+
 
         .player-logo {
-            width: 44px;
-            height: 44px;
+
+            width: 42px;
+
+            height: 42px;
+
             border-radius: 8px;
+
             object-fit: contain;
+
             background: #1b1b22;
+
             border: 1px solid #2a2a36;
+
             padding: 3px;
+
             flex-shrink: 0;
+
         }
+
+
 
         .player-details {
+
             overflow: hidden;
+
         }
+
+
 
         .player-title {
+
             font-weight: 800;
-            font-size: 0.95rem;
+
+            font-size: 0.9rem;
+
             color: #fff;
+
             white-space: nowrap;
+
             overflow: hidden;
+
             text-overflow: ellipsis;
+
         }
+
+
+
+        .player-now-playing {
+
+            font-size: 0.78rem;
+
+            color: #f1c40f;
+
+            font-weight: 600;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            margin-top: 1px;
+
+        }
+
+
 
         .player-status {
-            font-size: 0.75rem;
+
+            font-size: 0.72rem;
+
             color: #ff2a2a;
+
             font-weight: 600;
+
             display: flex;
+
             align-items: center;
+
             gap: 6px;
+
+            margin-top: 1px;
+
         }
+
+
 
         .pulse {
+
             width: 6px;
+
             height: 6px;
+
             background-color: #ff2a2a;
+
             border-radius: 50%;
+
             display: inline-block;
+
             box-shadow: 0 0 0 rgba(255, 42, 42, 0.4);
+
             animation: pulse 1.5s infinite;
+
         }
+
+
 
         @keyframes pulse {
+
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 42, 42, 0.7); }
+
             70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(255, 42, 42, 0); }
+
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 42, 42, 0); }
+
         }
+
+
 
         .main-play-btn {
+
             background: #ff2a2a;
+
             color: white;
+
             border: none;
-            width: 46px;
-            height: 46px;
+
+            width: 44px;
+
+            height: 44px;
+
             border-radius: 50%;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             cursor: pointer;
+
             box-shadow: 0 4px 12px rgba(255, 42, 42, 0.4);
+
             flex-shrink: 0;
+
         }
+
+
 
         .main-play-btn svg {
-            width: 20px;
-            height: 20px;
+
+            width: 18px;
+
+            height: 18px;
+
             fill: white;
+
         }
+
+
 
         /* Barre de volume */
+
         .volume-bar-container {
+
             display: flex;
+
             align-items: center;
+
             gap: 10px;
+
             background: #14141a;
+
             padding: 6px 12px;
+
             border-radius: 8px;
+
             border: 1px solid #22222e;
+
         }
+
+
 
         .volume-icon {
+
             width: 16px;
+
             height: 16px;
+
             fill: #7a7a8c;
+
             flex-shrink: 0;
+
         }
+
+
 
         .volume-slider {
+
             -webkit-appearance: none;
+
             width: 100%;
+
             height: 4px;
+
             border-radius: 2px;
+
             background: #2e2e3e;
+
             outline: none;
+
         }
+
+
 
         .volume-slider::-webkit-slider-thumb {
+
             -webkit-appearance: none;
+
             appearance: none;
+
             width: 14px;
+
             height: 14px;
+
             border-radius: 50%;
+
             background: #ff2a2a;
+
             cursor: pointer;
+
         }
+
+
 
         .error-toast {
+
             position: fixed;
+
             top: 80px;
+
             left: 50%;
+
             transform: translateX(-50%);
+
             background: #ff2a2a;
+
             color: white;
+
             padding: 10px 20px;
+
             border-radius: 8px;
+
             font-size: 0.85rem;
+
             font-weight: 600;
-            z-index: 3000;
+
+            z-index: 2000;
+
             display: none;
+
             box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+
         }
+
+
 
         .no-results {
+
             text-align: center;
+
             padding: 30px;
+
             color: #7a7a8c;
+
             font-size: 0.9rem;
+
             display: none;
+
         }
+
     </style>
+
 </head>
+
 <body>
 
+
+
     <header>
-        <svg class="header-logo" viewBox="0 0 512 512" style="width:38px;height:38px;flex-shrink:0;">
+
+        <svg class="header-logo" viewBox="0 0 512 512">
+
             <path d="M128 230 C128 110 384 110 384 230" fill="none" stroke="#2a2a36" stroke-width="28" stroke-linecap="round"/>
+
             <path d="M140 230 C140 125 372 125 372 230" fill="none" stroke="#ff2a2a" stroke-width="10" stroke-linecap="round"/>
+
             <rect x="96" y="210" width="44" height="96" rx="22" fill="#1f1f2a" stroke="#ff2a2a" stroke-width="6"/>
+
             <rect x="372" y="210" width="44" height="96" rx="22" fill="#1f1f2a" stroke="#ff2a2a" stroke-width="6"/>
+
             <path d="M160 210 C160 140 352 140 352 210 C352 260 330 280 320 310 L192 310 C182 280 160 260 160 210 Z" fill="#e6e8f0"/>
+
             <ellipse cx="206" cy="225" rx="32" ry="36" fill="#0b0b0d"/>
+
             <ellipse cx="306" cy="225" rx="32" ry="36" fill="#0b0b0d"/>
+
             <circle cx="216" cy="215" r="8" fill="#ff2a2a"/>
+
             <circle cx="316" cy="215" r="8" fill="#ff2a2a"/>
+
             <path d="M256 262 L244 280 C244 286 268 286 268 280 Z" fill="#0b0b0d"/>
+
             <path d="M200 310 L200 350 C200 365 312 365 312 350 L312 310 Z" fill="#e6e8f0"/>
+
             <line x1="222" y1="318" x2="222" y2="348" stroke="#0b0b0d" stroke-width="5" stroke-linecap="round"/>
+
             <line x1="245" y1="318" x2="245" y2="352" stroke="#0b0b0d" stroke-width="5" stroke-linecap="round"/>
+
             <line x1="267" y1="318" x2="267" y2="352" stroke="#0b0b0d" stroke-width="5" stroke-linecap="round"/>
+
             <line x1="290" y1="318" x2="290" y2="348" stroke="#0b0b0d" stroke-width="5" stroke-linecap="round"/>
+
             <line x1="195" y1="330" x2="317" y2="330" stroke="#0b0b0d" stroke-width="5"/>
+
         </svg>
+
         <h1>Metal & Hard <span>Radios</span></h1>
+
     </header>
 
-    <div class="error-toast" id="errorToast">Erreur de lecture du flux audio.</div>
+
+
+    <div class="error-toast" id="errorToast">Erreur de lecture du flux audio. Reconnexion...</div>
+
+
 
     <div class="controls-container">
+
         <div class="search-box">
+
             <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+
             <input type="text" id="searchInput" placeholder="Rechercher une station ou un genre...">
+
         </div>
-        <div class="filter-row">
-            <div class="filter-tabs">
-                <button class="tab-btn active" id="tabAll" onclick="setFilter('all')">Toutes</button>
-                <button class="tab-btn" id="tabFav" onclick="setFilter('fav')">
-                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    Favoris
-                </button>
-            </div>
-            <button class="add-radio-trigger" onclick="openModal()">
-                <span>+</span> Ajouter
+
+        <div class="filter-tabs">
+
+            <button class="tab-btn active" id="tabAll" onclick="setFilter('all')">Toutes</button>
+
+            <button class="tab-btn" id="tabFav" onclick="setFilter('fav')">
+
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+
+                Favoris
+
             </button>
+
+            <button class="tab-btn" onclick="openAddModal()">
+
+                <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+                Ajouter
+
+            </button>
+
         </div>
+
     </div>
+
+
 
     <div class="container">
-        <div class="section-title" id="sectionTitle">Sélection Principale</div>
+
+        <div class="section-title" id="sectionTitle">SÃ©lection Principale</div>
+
         <div class="radio-grid" id="radioGrid"></div>
-        <div class="no-results" id="noResults">Aucune radio trouvée</div>
+
+        <div class="no-results" id="noResults">Aucune radio trouvÃ©e</div>
+
     </div>
 
-    <!-- Modal pour ajouter une radio -->
-    <div class="modal-overlay" id="addModal">
-        <div class="modal-card">
-            <div class="modal-header">
-                <div class="modal-title">Ajouter une web-radio</div>
-                <button class="close-modal-btn" onclick="closeModal()">&times;</button>
+
+
+    <!-- Modal d'ajout -->
+
+    <div class="modal" id="addModal">
+
+        <div class="modal-content">
+
+            <div class="modal-title">Ajouter une Web Radio</div>
+
+            <input type="text" class="modal-input" id="newRadioName" placeholder="Nom de la radio (ex: Hellfest Radio)">
+
+            <input type="text" class="modal-input" id="newRadioGenre" placeholder="Genre (ex: Heavy / Death Metal)">
+
+            <input type="url" class="modal-input" id="newRadioUrl" placeholder="Lien du flux MP3/AAC (https://...)">
+
+            <input type="url" class="modal-input" id="newRadioLogo" placeholder="Lien de l'image / Logo (optionnel)">
+
+            <div class="modal-buttons">
+
+                <button class="btn-cancel" onclick="closeAddModal()">Annuler</button>
+
+                <button class="btn-submit" onclick="addNewRadio()">Valider</button>
+
             </div>
-            <form id="addRadioForm" onsubmit="handleAddRadio(event)">
-                <div class="form-group">
-                    <label for="radioName">Nom de la radio *</label>
-                    <input type="text" id="radioName" required placeholder="ex: Heavy Metal Radio">
-                </div>
-                <div class="form-group">
-                    <label for="radioGenre">Genre / Description *</label>
-                    <input type="text" id="radioGenre" required placeholder="ex: Thrash / Speed Metal">
-                </div>
-                <div class="form-group">
-                    <label for="radioUrl">URL du flux MP3 / AAC *</label>
-                    <input type="url" id="radioUrl" required placeholder="https://stream.exemple.com/live">
-                </div>
-                <div class="form-group">
-                    <label for="radioLogo">URL de l'image / logo (optionnel)</label>
-                    <input type="url" id="radioLogo" placeholder="https://exemple.com/logo.png">
-                </div>
-                <button type="submit" class="submit-btn">Ajouter la station</button>
-            </form>
+
         </div>
+
     </div>
+
+
+
+    <!-- Modal d'Ã©dition -->
+
+    <div class="modal" id="editModal">
+
+        <div class="modal-content">
+
+            <div class="modal-title">Modifier la Radio</div>
+
+            <input type="hidden" id="editRadioId">
+
+            <input type="text" class="modal-input" id="editRadioName" placeholder="Nom de la radio">
+
+            <input type="text" class="modal-input" id="editRadioGenre" placeholder="Genre">
+
+            <input type="url" class="modal-input" id="editRadioUrl" placeholder="Lien du flux audio">
+
+            <input type="url" class="modal-input" id="editRadioLogo" placeholder="Lien de l'image / Logo">
+
+            <div class="modal-buttons">
+
+                <button class="btn-cancel" onclick="closeEditModal()">Annuler</button>
+
+                <button class="btn-submit" onclick="saveEditedRadio()">Enregistrer</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Modal de confirmation de suppression -->
+
+    <div class="modal" id="deleteModal">
+
+        <div class="modal-content" style="text-align: center;">
+
+            <div class="modal-title" style="color: #ff2a2a;">Supprimer la station</div>
+
+            <p id="deleteConfirmText" style="font-size: 0.9rem; color: #d0d0dc; margin: 10px 0;">Voulez-vous vraiment supprimer cette radio ?</p>
+
+            <div class="modal-buttons">
+
+                <button class="btn-cancel" onclick="closeDeleteModal()">Non, garder</button>
+
+                <button class="btn-submit" onclick="confirmDeleteRadio()">Oui, supprimer</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Pop-up Humoristique (Alerte Non-Metal) -->
+
+    <div class="funny-alert" id="funnyAlert">
+
+        <svg viewBox="0 0 24 24" width="48" height="48" fill="#ff2a2a"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+
+        <h3>ALERTE ANTI-SOUPE !</h3>
+
+        <p id="funnyAlertText">C'est quoi cette tentative ? On Ã©coute du gros son ici ! Pas de varioche ni d'autotune sur cette appli ! ðŸ¤˜ðŸ”¥</p>
+
+        <button onclick="closeFunnyAlert()">Pardon, je rebranche les guitares !</button>
+
+    </div>
+
+
+
+    <!-- Section Flappy Beer centrÃ©e et ajustÃ©e pour mobile -->
+
+    <div class="flappy-section">
+
+        <div class="game-container">
+
+            <canvas id="gameCanvas" width="900" height="500"></canvas>
+
+        </div>
+
+        <div class="instructions">
+
+            Appuyez sur <kbd>ESPACE</kbd> ou **Cliquez** pour faire voler la chope !
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Player fixe en bas -->
 
     <div class="fixed-player" id="fixedPlayer">
+
         <div class="player-main">
+
             <div class="player-left">
+
                 <img src="" alt="" class="player-logo" id="playerLogo">
+
                 <div class="player-details">
-                    <div class="player-title" id="playerTitle">Sélectionnez une radio</div>
+
+                    <div class="player-title" id="playerTitle">SÃ©lectionnez une radio</div>
+
+                    <div class="player-now-playing" id="playerNowPlaying">Artiste - Morceau</div>
+
                     <div class="player-status"><span class="pulse"></span> En direct</div>
+
                 </div>
+
             </div>
+
             <button class="main-play-btn" id="mainPlayBtn" onclick="togglePlay()">
+
                 <svg id="playPauseIcon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+
             </button>
+
         </div>
+
+
 
         <div class="volume-bar-container">
+
             <svg class="volume-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+
             <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.8">
+
         </div>
+
     </div>
 
-    <audio id="audioElement"></audio>
+
+
+    <audio id="audioElement" playsinline preload="none"></audio>
+
+
 
     <script>
-        const DEFAULT_RADIOS = [
+
+        // --- CONFIGURATION FIREBASE (Synchronisation Cloud) ---
+
+        const firebaseConfig = {
+
+            databaseURL: "https://metal-radio-app-default-rtdb.firebaseio.com"
+
+        };
+
+
+
+        if (!firebase.apps.length) {
+
+            firebase.initializeApp(firebaseConfig);
+
+        }
+
+        const db = firebase.database().ref('radios');
+
+        const scoresDb = firebase.database().ref('highscores');
+
+
+
+        const defaultRadios = [
+
             {
+
                 id: "lagrosse-metal",
+
                 name: "La Grosse Radio Metal",
+
                 genre: "Hard Rock / Heavy / Metal",
+
                 url: "https://hd.lagrosseradio.info/lagrosseradio-metal-192.mp3",
-                logo: "https://www.lagrosseradio.com/wp-content/uploads/2025/03/LGR_Metal_carre-3.png",
-                isCustom: false
+
+                logo: "https://www.lagrosseradio.com/wp-content/uploads/2025/03/LGR_Metal_carre-3.png"
+
             },
+
             {
+
                 id: "hrh-radio",
+
                 name: "Hard Rock Hell Radio",
+
                 genre: "Hard Rock & Classic Metal",
+
                 url: "https://tbfmonli.radioca.st/stream",
-                logo: "https://hardrockhellradio.com/wp-content/uploads/radiohrh2025_background-scaled.jpg",
-                isCustom: false
+
+                logo: "https://hardrockhellradio.com/wp-content/uploads/radiohrh2025_background-scaled.jpg"
+
             },
+
             {
+
                 id: "allzic-hard-heavy",
+
                 name: "All Zic Hard & Heavy",
+
                 genre: "Hard & Heavy",
+
                 url: "https://allzic18.ice.infomaniak.ch/allzic18.mp3",
-                logo: "https://www.allzicradio.com/media/radios/allzic-hard-heavy_600px-carre.png",
-                isCustom: false
+
+                logo: "https://www.allzicradio.com/media/radios/allzic-hard-heavy_600px-carre.png"
+
             },
+
             {
+
                 id: "somafm-metal",
+
                 name: "SomaFM Metal Detector",
+
                 genre: "Black / Doom / Death / Thrash",
+
                 url: "https://ice6.somafm.com/metal-128-mp3",
-                logo: "https://static.mytuner.mobi/media/tvos_radios/385/somafm-metal-detector.11a11f0d.png",
-                isCustom: false
+
+                logo: "https://static.mytuner.mobi/media/tvos_radios/385/somafm-metal-detector.11a11f0d.png"
+
             },
+
             {
+
                 id: "rockantenne-heavy",
+
                 name: "ROCK ANTENNE Heavy Metal",
+
                 genre: "Heavy Metal & Power Metal",
+
                 url: "https://stream.rockantenne.de/heavy-metal/stream/mp3",
-                logo: "https://www.radio.fr/175/antenneheavy.png?version=7fca942835c9ab5aec37c50ad999d6117ee85b91",
-                isCustom: false
+
+                logo: "https://www.radio.fr/175/antenneheavy.png?version=7fca942835c9ab5aec37c50ad999d6117ee85b91"
+
             },
+
             {
+
                 id: "radio-bob-metal",
+
                 name: "RADIO BOB! Metal",
+
                 genre: "Heavy Metal & Hard Rock",
+
                 url: "https://streams.radiobob.de/bob-metal/mp3-192/streams.radiobob.de/",
-                logo: "https://www.radio.fr/175/radiobobnumetal.png?version=78b4d777c531d47d9420fb45b35d07a36d76638f",
-                isCustom: false
+
+                logo: "https://www.radio.fr/175/radiobobnumetal.png?version=78b4d777c531d47d9420fb45b35d07a36d76638f"
+
             },
+
             {
-                id: "gothic-n-metal",
+
+                id: "metal-radio-austria",
+
                 name: "Metal Radio",
+
                 genre: "Metal",
+
                 url: "https://radio3.pro-fhi.net/live/Radio Metal",
-                logo: "https://imgs.search.brave.com/sRYm8qgeE4BCvmJOF2bh6RGHTfBlxgUKIhzfv6AoCcs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMyLm15dHVuZXIu/bW9iaS9tZWRpYS90/dm9zX3JhZGlvcy82/NzgvbWV0YWwtcmFk/aW8tYXVzdHJpYS43/ZjRmZjJlZS5wbmc",
-                isCustom: false
+
+                logo: "https://imgs.search.brave.com/sRYm8qgeE4BCvmJOF2bh6RGHTfBlxgUKIhzfv6AoCcs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aW25Lm15dHVuZXIu/bW9iaS9tZWRpYS90/dm9zX3JhZGlvcy82/NzgvbWV0YWwtcmFk/aW8tYXVzdHJpYS43/ZjRmZjJlZS5wbmc"
+
             }
+
         ];
 
-        const DEFAULT_LOGO = "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=120&h=120&fit=crop";
 
-        let customRadios = JSON.parse(localStorage.getItem('metal_radio_customs') || '[]');
-        let favorites = JSON.parse(localStorage.getItem('metal_radio_favs') || '[]');
 
-        let currentRadioId = null;
+        let radios = [...defaultRadios];
+
+        let currentRadioIndex = null;
+
         let isPlaying = false;
+
         let currentFilterMode = 'all';
 
+        let favorites = JSON.parse(localStorage.getItem('metal_radio_favs') || '[]');
+
+        let radioToDeleteId = null;
+
+        let reconnectTimeout = null;
+
+
+
         const audioElement = document.getElementById('audioElement');
+
         const fixedPlayer = document.getElementById('fixedPlayer');
+
         const playerTitle = document.getElementById('playerTitle');
+
+        const playerNowPlaying = document.getElementById('playerNowPlaying');
+
         const playerLogo = document.getElementById('playerLogo');
+
         const playPauseIcon = document.getElementById('playPauseIcon');
+
         const radioGrid = document.getElementById('radioGrid');
+
         const searchInput = document.getElementById('searchInput');
+
         const noResults = document.getElementById('noResults');
+
         const errorToast = document.getElementById('errorToast');
+
         const volumeSlider = document.getElementById('volumeSlider');
+
         const tabAll = document.getElementById('tabAll');
+
         const tabFav = document.getElementById('tabFav');
+
         const sectionTitle = document.getElementById('sectionTitle');
-        const addModal = document.getElementById('addModal');
+
+
 
         audioElement.volume = volumeSlider.value;
+
         volumeSlider.addEventListener('input', (e) => {
+
             audioElement.volume = e.target.value;
+
         });
 
-        function getAllRadios() {
-            return [...DEFAULT_RADIOS, ...customRadios];
-        }
 
-        function showError() {
-            errorToast.style.display = 'block';
-            setTimeout(() => {
-                errorToast.style.display = 'none';
-            }, 3500);
-        }
 
-        function setFilter(mode) {
-            currentFilterMode = mode;
-            if (mode === 'all') {
-                tabAll.classList.add('active');
-                tabFav.classList.remove('active');
-                sectionTitle.textContent = "Sélection Principale";
-            } else {
-                tabFav.classList.add('active');
-                tabAll.classList.remove('active');
-                sectionTitle.textContent = "Mes Favoris";
-            }
-            renderRadios(searchInput.value);
-        }
+        // --- OPTIMISATION ET GESTION INTERRUPTIONS AUDIO POUR IPHONE (iOS) ---
 
-        function toggleFavorite(id, event) {
-            event.stopPropagation();
-            if (favorites.includes(id)) {
-                favorites = favorites.filter(favId => favId !== id);
-            } else {
-                favorites.push(id);
-            }
-            localStorage.setItem('metal_radio_favs', JSON.stringify(favorites));
-            renderRadios(searchInput.value);
-        }
+        let audioCtx = null;
 
-        function deleteCustomRadio(id, event) {
-            event.stopPropagation();
-            if (confirm("Voulez-vous supprimer cette radio personnalisée ?")) {
-                if (currentRadioId === id) {
-                    audioElement.pause();
-                    isPlaying = false;
-                    fixedPlayer.classList.remove('active');
-                    currentRadioId = null;
+        function initiOSAudioSession() {
+
+            if (!audioCtx) {
+
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+
+                if (AudioContext) {
+
+                    audioCtx = new AudioContext();
+
+                    // Micro-oscillateur silencieux pour maintenir la session audio iOS active
+
+                    const osc = audioCtx.createOscillator();
+
+                    const gain = audioCtx.createGain();
+
+                    gain.gain.value = 0.001; // Quasiment inaudible pour garder la prioritÃ© audio
+
+                    osc.connect(gain);
+
+                    gain.connect(audioCtx.destination);
+
+                    osc.start(0);
+
                 }
-                customRadios = customRadios.filter(r => r.id !== id);
-                favorites = favorites.filter(favId => favId !== id);
-                localStorage.setItem('metal_radio_customs', JSON.stringify(customRadios));
-                localStorage.setItem('metal_radio_favs', JSON.stringify(favorites));
-                renderRadios(searchInput.value);
-            }
-        }
 
-        function openModal() {
-            addModal.classList.add('active');
-        }
-
-        function closeModal() {
-            addModal.classList.remove('active');
-            document.getElementById('addRadioForm').reset();
-        }
-
-        function handleAddRadio(event) {
-            event.preventDefault();
-            const name = document.getElementById('radioName').value.trim();
-            const genre = document.getElementById('radioGenre').value.trim();
-            const url = document.getElementById('radioUrl').value.trim();
-            let logo = document.getElementById('radioLogo').value.trim();
-
-            if (!logo) logo = DEFAULT_LOGO;
-
-            const newRadio = {
-                id: 'custom-' + Date.now(),
-                name,
-                genre,
-                url,
-                logo,
-                isCustom: true
-            };
-
-            customRadios.push(newRadio);
-            localStorage.setItem('metal_radio_customs', JSON.stringify(customRadios));
-            closeModal();
-            renderRadios(searchInput.value);
-        }
-
-        function renderRadios(filter = '') {
-            radioGrid.innerHTML = '';
-            let list = getAllRadios();
-
-            if (currentFilterMode === 'fav') {
-                list = list.filter(r => favorites.includes(r.id));
             }
 
-            const filtered = list.filter(r =>
-                r.name.toLowerCase().includes(filter.toLowerCase()) ||
-                r.genre.toLowerCase().includes(filter.toLowerCase())
-            );
+            if (audioCtx && audioCtx.state === 'suspended') {
 
-            if (filtered.length === 0) {
-                noResults.style.display = 'block';
-                return;
-            } else {
-                noResults.style.display = 'none';
+                audioCtx.resume();
+
             }
 
-            filtered.forEach((radio) => {
-                const isCurrent = currentRadioId === radio.id;
-                const isFav = favorites.includes(radio.id);
-
-                const card = document.createElement('div');
-                card.className = `radio-card ${isCurrent && isPlaying ? 'playing' : ''}`;
-                card.innerHTML = `
-                    <div class="radio-info" onclick="playRadio('${radio.id}')">
-                        <img src="${radio.logo}" alt="${radio.name}" class="radio-logo" onerror="this.src='${DEFAULT_LOGO}'">
-                        <div class="radio-text">
-                            <div class="radio-name">
-                                ${radio.name}
-                                ${radio.isCustom ? '<span class="custom-badge">Perso</span>' : ''}
-                            </div>
-                            <div class="radio-genre">${radio.genre}</div>
-                        </div>
-                    </div>
-                    <div class="card-actions">
-                        <button class="fav-btn ${isFav ? 'is-fav' : ''}" title="Favori" onclick="toggleFavorite('${radio.id}', event)">
-                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        </button>
-                        ${radio.isCustom ? `
-                            <button class="delete-btn" title="Supprimer" onclick="deleteCustomRadio('${radio.id}', event)">
-                                <svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
-                            </button>
-                        ` : ''}
-                        <button class="play-btn" onclick="playRadio('${radio.id}')">
-                            <svg viewBox="0 0 24 24">
-                                ${isCurrent && isPlaying ?
-                                    '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>' :
-                                    '<path d="M8 5v14l11-7z"/>'}
-                            </svg>
-                        </button>
-                    </div>
-                `;
-                radioGrid.appendChild(card);
-            });
         }
 
-        function playRadio(id) {
-            const all = getAllRadios();
-            const radio = all.find(r => r.id === id);
-            if (!radio) return;
 
-            if (currentRadioId === id && isPlaying) {
-                audioElement.pause();
-                isPlaying = false;
-            } else {
-                currentRadioId = id;
-                audioElement.src = radio.url;
-                audioElement.load();
 
-                audioElement.play().then(() => {
-                    isPlaying = true;
-                    fixedPlayer.classList.add('active');
-                    playerTitle.textContent = radio.name;
-                    playerLogo.src = radio.logo;
-                    playPauseIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
-                    renderRadios(searchInput.value);
-                }).catch(err => {
-                    showError();
-                    console.error(err);
-                });
-            }
-            renderRadios(searchInput.value);
-        }
+        // Ã‰coute des interruptions spÃ©cifiques iOS (Appels, Notifications, Siri, autre app)
 
-        audioElement.addEventListener('error', () => {
-            showError();
-            isPlaying = false;
-            playPauseIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
-            renderRadios(searchInput.value);
-        });
-
-        function togglePlay() {
-            if (!currentRadioId) return;
+        audioElement.addEventListener('interruptionbegin', () => {
 
             if (isPlaying) {
+
                 audioElement.pause();
-                isPlaying = false;
-                playPauseIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
-            } else {
-                audioElement.play().then(() => {
-                    isPlaying = true;
-                    playPauseIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
-                }).catch(() => showError());
+
             }
-            renderRadios(searchInput.value);
+
+        });
+
+
+
+        audioElement.addEventListener('interruptionend', () => {
+
+            if (isPlaying && currentRadioIndex !== null) {
+
+                resumeLiveStream();
+
+            }
+
+        });
+
+
+
+        // Fonction pour reprendre le direct proprement sans saccades de buffer
+
+        function resumeLiveStream() {
+
+            if (currentRadioIndex === null) return;
+
+            const radio = radios[currentRadioIndex];
+
+            const liveUrl = radio.url + (radio.url.includes('?') ? '&' : '?') + '_ts=' + Date.now();
+
+            audioElement.src = liveUrl;
+
+            audioElement.load();
+
+            audioElement.play().then(() => {
+
+                isPlaying = true;
+
+                playPauseIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+
+                renderRadios(searchInput.value);
+
+            }).catch(e => console.log("Erreur reprise iOS:", e));
+
         }
 
-        audioElement.addEventListener('pause', () => {
-            isPlaying = false;
-            playPauseIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+
+
+        // --- SYNCHRONISATION EN TEMPS RÃ‰EL (FIREBASE) ---
+
+        db.on('value', (snapshot) => {
+
+            const data = snapshot.val();
+
+            if (data && Array.isArray(data)) {
+
+                radios = data;
+
+            } else {
+
+                db.set(defaultRadios);
+
+            }
+
             renderRadios(searchInput.value);
+
         });
+
+
+
+        function syncToCloud() {
+
+            db.set(radios);
+
+        }
+
+
+
+        audioElement.addEventListener('error', () => {
+
+            showError();
+
+            isPlaying = false;
+
+            playPauseIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+
+            renderRadios(searchInput.value);
+
+
+
+            if (currentRadioIndex !== null) {
+
+                clearTimeout(reconnectTimeout);
+
+                reconnectTimeout = setTimeout(() => {
+
+                    resumeLiveStream();
+
+                }, 3000);
+
+            }
+
+        });
+
+
+
+        function showError() {
+
+            errorToast.style.display = 'block';
+
+            setTimeout(() => {
+
+                errorToast.style.display = 'none';
+
+            }, 4000);
+
+        }
+
+
+
+        function setFilter(mode) {
+
+            currentFilterMode = mode;
+
+            if (mode === 'all') {
+
+                tabAll.classList.add('active');
+
+                tabFav.classList.remove('active');
+
+                sectionTitle.textContent = "SÃ©lection Principale";
+
+            } else {
+
+                tabFav.classList.add('active');
+
+                tabAll.classList.remove('active');
+
+                sectionTitle.textContent = "Mes Favoris";
+
+            }
+
+            renderRadios(searchInput.value);
+
+        }
+
+
+
+        function toggleFavorite(id, event) {
+
+            event.stopPropagation();
+
+            if (favorites.includes(id)) {
+
+                favorites = favorites.filter(favId => favId !== id);
+
+            } else {
+
+                favorites.push(id);
+
+            }
+
+            localStorage.setItem('metal_radio_favs', JSON.stringify(favorites));
+
+            renderRadios(searchInput.value);
+
+        }
+
+
+
+        function promptDeleteRadio(id, event) {
+
+            event.stopPropagation();
+
+            radioToDeleteId = id;
+
+            const radio = radios.find(r => r.id === id);
+
+            if (radio) {
+
+                document.getElementById('deleteConfirmText').textContent = `Voulez-vous vraiment supprimer "${radio.name}" ?`;
+
+                document.getElementById('deleteModal').classList.add('active');
+
+            }
+
+        }
+
+
+
+        function closeDeleteModal() {
+
+            document.getElementById('deleteModal').classList.remove('active');
+
+            radioToDeleteId = null;
+
+        }
+
+
+
+        function confirmDeleteRadio() {
+
+            if (radioToDeleteId) {
+
+                radios = radios.filter(r => r.id !== radioToDeleteId);
+
+                favorites = favorites.filter(favId => favId !== radioToDeleteId);
+
+                syncToCloud();
+
+                localStorage.setItem('metal_radio_favs', JSON.stringify(favorites));
+
+                closeDeleteModal();
+
+            }
+
+        }
+
+
+
+        function openEditModal(id, event) {
+
+            event.stopPropagation();
+
+            const radio = radios.find(r => r.id === id);
+
+            if (!radio) return;
+
+
+
+            document.getElementById('editRadioId').value = radio.id;
+
+            document.getElementById('editRadioName').value = radio.name;
+
+            document.getElementById('editRadioGenre').value = radio.genre;
+
+            document.getElementById('editRadioUrl').value = radio.url;
+
+            document.getElementById('editRadioLogo').value = radio.logo;
+
+
+
+            document.getElementById('editModal').classList.add('active');
+
+        }
+
+
+
+        function closeEditModal() {
+
+            document.getElementById('editModal').classList.remove('active');
+
+        }
+
+
+
+        function saveEditedRadio() {
+
+            const id = document.getElementById('editRadioId').value;
+
+            const name = document.getElementById('editRadioName').value.trim();
+
+            const genre = document.getElementById('editRadioGenre').value.trim();
+
+            const url = document.getElementById('editRadioUrl').value.trim();
+
+            const logo = document.getElementById('editRadioLogo').value.trim();
+
+
+
+            if (!name || !url) {
+
+                alert("Le nom et le lien du flux audio sont obligatoires !");
+
+                return;
+
+            }
+
+
+
+            const index = radios.findIndex(r => r.id === id);
+
+            if (index !== -1) {
+
+                radios[index].name = name;
+
+                radios[index].genre = genre || 'Rock / Metal';
+
+                radios[index].url = url;
+
+                if (logo) radios[index].logo = logo;
+
+
+
+                if (currentRadioIndex === index && isPlaying) {
+
+                    playerTitle.textContent = name;
+
+                    if (logo) playerLogo.src = logo;
+
+                    resumeLiveStream();
+
+                    updateMediaSession(name, genre, logo);
+
+                }
+
+
+
+                syncToCloud();
+
+                closeEditModal();
+
+            }
+
+        }
+
+
+
+        function renderRadios(filter = '') {
+
+            radioGrid.innerHTML = '';
+
+
+
+            let list = radios;
+
+            if (currentFilterMode === 'fav') {
+
+                list = list.filter(r => favorites.includes(r.id));
+
+            }
+
+
+
+            const filtered = list.filter(r =>
+
+                r.name.toLowerCase().includes(filter.toLowerCase()) ||
+
+                r.genre.toLowerCase().includes(filter.toLowerCase())
+
+            );
+
+
+
+            if (filtered.length === 0) {
+
+                noResults.style.display = 'block';
+
+                return;
+
+            } else {
+
+                noResults.style.display = 'none';
+
+            }
+
+
+
+            filtered.forEach((radio) => {
+
+                const originalIndex = radios.findIndex(r => r.id === radio.id);
+
+                const isCurrent = currentRadioIndex === originalIndex;
+
+                const isFav = favorites.includes(radio.id);
+
+
+
+                const card = document.createElement('div');
+
+                card.className = `radio-card ${isCurrent && isPlaying ? 'playing' : ''}`;
+
+                card.innerHTML = `
+
+                    <div class="radio-info" onclick="playRadio(${originalIndex})">
+
+                        <img src="${radio.logo}" alt="${radio.name}" class="radio-logo" onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=120&h=120&fit=crop'">
+
+                        <div class="radio-text">
+
+                            <div class="radio-name">${radio.name}</div>
+
+                            <div class="radio-genre">${radio.genre}</div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-actions">
+
+                        <button class="action-btn fav-btn ${isFav ? 'is-fav' : ''}" onclick="toggleFavorite('${radio.id}', event)" title="Favori">
+
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+
+                        </button>
+
+                        <button class="action-btn edit-btn" onclick="openEditModal('${radio.id}', event)" title="Modifier">
+
+                            <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+
+                        </button>
+
+                        <button class="action-btn delete-btn" onclick="promptDeleteRadio('${radio.id}', event)" title="Supprimer">
+
+                            <svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+
+                        </button>
+
+                        <button class="play-btn" onclick="playRadio(${originalIndex})">
+
+                            <svg viewBox="0 0 24 24">
+
+                                ${isCurrent && isPlaying ?
+
+                                    '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>' :
+
+                                    '<path d="M8 5v14l11-7z"/>'}
+
+                            </svg>
+
+                        </button>
+
+                    </div>
+
+                `;
+
+                radioGrid.appendChild(card);
+
+            });
+
+        }
+
+
+
+        function updateMediaSession(title, artist, artworkUrl, currentSong = "") {
+
+            if ('mediaSession' in navigator) {
+
+                navigator.mediaSession.metadata = new MediaMetadata({
+
+                    title: currentSong || title,
+
+                    artist: title,
+
+                    album: "Live Stream 24/7 ðŸ¤˜",
+
+                    artwork: [
+
+                        { src: artworkUrl, sizes: '96x96', type: 'image/png' },
+
+                        { src: artworkUrl, sizes: '128x128', type: 'image/png' },
+
+                        { src: artworkUrl, sizes: '192x192', type: 'image/png' },
+
+                        { src: artworkUrl, sizes: '512x512', type: 'image/png' }
+
+                    ]
+
+                });
+
+
+
+                navigator.mediaSession.setActionHandler('play', () => {
+
+                    initiOSAudioSession();
+
+                    resumeLiveStream();
+
+                });
+
+
+
+                navigator.mediaSession.setActionHandler('pause', () => {
+
+                    audioElement.pause();
+
+                    isPlaying = false;
+
+                    playPauseIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+
+                    renderRadios(searchInput.value);
+
+                });
+
+            }
+
+        }
+
+
+
+        function playRadio(index) {
+
+            initiOSAudioSession();
+
+            const radio = radios[index];
+
+
+
+            if (currentRadioIndex === index && isPlaying) {
+
+                audioElement.pause();
+
+                isPlaying = false;
+
+            } else {
+
+                currentRadioIndex = index;
+
+                // Forcer le direct avec un timestamp unique pour Ã©viter le cache/buffer altÃ©rÃ© sur iPhone
+
+                const liveUrl = radio.url + (radio.url.includes('?') ? '&' : '?') + '_ts=' + Date.now();
+
+                audioElement.src = liveUrl;
+
+                audioElement.load();
+
+
+
+                playerNowPlaying.textContent = "Chargement du direct...";
+
+
+
+                audioElement.play().then(() => {
+
+                    isPlaying = true;
+
+                    fixedPlayer.classList.add('active');
+
+                    playerTitle.textContent = radio.name;
+
+                    playerLogo.src = radio.logo;
+
+                    playPauseIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+
+                    updateMediaSession(radio.name, radio.genre, radio.logo);
+
+                    renderRadios(searchInput.value);
+
+                }).catch(err => {
+
+                    showError();
+
+                    console.error(err);
+
+                });
+
+            }
+
+            renderRadios(searchInput.value);
+
+        }
+
+
+
+        setInterval(() => {
+
+            if (isPlaying && currentRadioIndex !== null) {
+
+                if ('mediaSession' in navigator && navigator.mediaSession.metadata) {
+
+                    let songInfo = navigator.mediaSession.metadata.title;
+
+                    if (songInfo && songInfo !== radios[currentRadioIndex].name) {
+
+                        playerNowPlaying.textContent = songInfo;
+
+                    } else {
+
+                        playerNowPlaying.textContent = radios[currentRadioIndex].genre;
+
+                    }
+
+                } else {
+
+                    playerNowPlaying.textContent = radios[currentRadioIndex].genre;
+
+                }
+
+            }
+
+        }, 2000);
+
+
+
+        function openAddModal() {
+
+            document.getElementById('addModal').classList.add('active');
+
+        }
+
+
+
+        function closeAddModal() {
+
+            document.getElementById('addModal').classList.remove('active');
+
+        }
+
+
+
+        function closeFunnyAlert() {
+
+            document.getElementById('funnyAlert').classList.remove('active');
+
+        }
+
+
+
+        function addNewRadio() {
+
+            const name = document.getElementById('newRadioName').value.trim();
+
+            const genre = document.getElementById('newRadioGenre').value.trim();
+
+            const url = document.getElementById('newRadioUrl').value.trim();
+
+            const logo = document.getElementById('newRadioLogo').value.trim() || 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=120&h=120&fit=crop';
+
+
+
+            if (!name || !url) {
+
+                alert("Veuillez indiquer au moins le nom et le lien audio !");
+
+                return;
+
+            }
+
+
+
+            const allowedKeywords = ['metal', 'thrash', 'trash', 'hard rock', 'heavy', 'death', 'black', 'power', 'gothic', 'doom', 'rock'];
+
+            const searchSubject = (name + ' ' + genre).toLowerCase();
+
+
+
+            const isAllowed = allowedKeywords.some(keyword => searchSubject.includes(keyword));
+
+
+
+            if (!isAllowed) {
+
+                closeAddModal();
+
+                document.getElementById('funnyAlertText').textContent = `Impossible d'ajouter "${name}". Ton style musical n'est pas reconnu comme Rock ou Metal ! Pas de soupe ici, monte le volume sur du gros son ! ðŸ¤˜ðŸ”¥`;
+
+                document.getElementById('funnyAlert').classList.add('active');
+
+                return;
+
+            }
+
+
+
+            const newRadio = {
+
+                id: 'custom-' + Date.now(),
+
+                name: name,
+
+                genre: genre || 'Rock / Metal',
+
+                url: url,
+
+                logo: logo
+
+            };
+
+
+
+            radios.push(newRadio);
+
+            syncToCloud();
+
+
+
+            document.getElementById('newRadioName').value = '';
+
+            document.getElementById('newRadioGenre').value = '';
+
+            document.getElementById('newRadioUrl').value = '';
+
+            document.getElementById('newRadioLogo').value = '';
+
+
+
+            closeAddModal();
+
+        }
+
+
+
+        function togglePlay() {
+
+            initiOSAudioSession();
+
+            if (currentRadioIndex === null) return;
+
+
+
+            if (isPlaying) {
+
+                audioElement.pause();
+
+                isPlaying = false;
+
+                playPauseIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+
+            } else {
+
+                resumeLiveStream();
+
+            }
+
+            renderRadios(searchInput.value);
+
+        }
+
+
+
+        audioElement.addEventListener('pause', () => {
+
+            isPlaying = false;
+
+            playPauseIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+
+            renderRadios(searchInput.value);
+
+        });
+
+
 
         audioElement.addEventListener('playing', () => {
+
             isPlaying = true;
+
             playPauseIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+
             renderRadios(searchInput.value);
+
         });
+
+
 
         searchInput.addEventListener('input', (e) => {
+
             renderRadios(e.target.value);
+
         });
 
+
+
         renderRadios();
+
+
+
+
+
+        // --- SCRIPT FLAPPY BEER AVEC HIGH SCORES AGRANDIS DANS LE GAME OVER ---
+
+        const canvas = document.getElementById("gameCanvas");
+
+        const ctx = canvas.getContext("2d");
+
+
+
+        let frames = 0;
+
+        let score = 0;
+
+        let gameStarted = false;
+
+        let gameOver = false;
+
+        let enteringInitials = false;
+
+
+
+        let highScores = [
+
+            { name: "ACE", score: 10 },
+
+            { name: "ROK", score: 5 },
+
+            { name: "BER", score: 2 }
+
+        ];
+
+
+
+        scoresDb.on('value', (snapshot) => {
+
+            const data = snapshot.val();
+
+            if (data && Array.isArray(data)) {
+
+                highScores = data;
+
+            } else {
+
+                scoresDb.set(highScores);
+
+            }
+
+        });
+
+
+
+        let currentInitials = ["A", "A", "A"];
+
+        let activeInitialIndex = 0;
+
+        const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+
+
+        const gravity = 0.35;
+
+        const jump = 6.8;
+
+        const gameSpeed = 3.2;
+
+
+
+        let particles = [];
+
+
+
+        class Particle {
+
+            constructor(x, y) {
+
+                this.x = x;
+
+                this.y = y;
+
+                this.size = Math.random() * 5 + 2;
+
+                this.speedX = -Math.random() * 2 - 1;
+
+                this.speedY = (Math.random() - 0.5) * 1.5;
+
+                this.opacity = 1;
+
+            }
+
+            update() {
+
+                this.x += this.speedX;
+
+                this.y += this.speedY;
+
+                this.opacity -= 0.02;
+
+            }
+
+            draw() {
+
+                ctx.save();
+
+                ctx.globalAlpha = Math.max(0, this.opacity);
+
+                ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+
+                ctx.beginPath();
+
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+
+                ctx.fill();
+
+                ctx.restore();
+
+            }
+
+        }
+
+
+
+        const beer = {
+
+            x: 120,
+
+            y: 220,
+
+            width: 55,
+
+            height: 65,
+
+            velocity: 0,
+
+            rotation: 0,
+
+            wingAngle: 0,
+
+
+
+            draw: function() {
+
+                ctx.save();
+
+                ctx.translate(this.x, this.y);
+
+                
+
+                this.rotation = Math.min(Math.PI / 4, Math.max(-Math.PI / 6, this.velocity * 0.07));
+
+                ctx.rotate(this.rotation);
+
+
+
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+
+                ctx.shadowBlur = 12;
+
+                ctx.shadowOffsetX = -5;
+
+                ctx.shadowOffsetY = 8;
+
+
+
+                this.wingAngle = Math.sin(frames * 0.25) * 0.3;
+
+                ctx.save();
+
+                ctx.translate(-10, -5);
+
+                ctx.rotate(-0.2 + this.wingAngle);
+
+                
+
+                ctx.fillStyle = "#e0e6ed";
+
+                ctx.strokeStyle = "#2c3e50";
+
+                ctx.lineWidth = 2.5;
+
+                
+
+                ctx.beginPath();
+
+                ctx.moveTo(0, 0);
+
+                ctx.quadraticCurveTo(-25, -25, -50, -15);
+
+                ctx.quadraticCurveTo(-35, -5, -20, 0);
+
+                ctx.quadraticCurveTo(-40, 10, -15, 10);
+
+                ctx.closePath();
+
+                ctx.fill();
+
+                ctx.stroke();
+
+                ctx.restore();
+
+
+
+                ctx.beginPath();
+
+                ctx.arc(18, 5, 16, -Math.PI / 2.2, Math.PI / 2.2);
+
+                ctx.strokeStyle = "#e0a920";
+
+                ctx.lineWidth = 7;
+
+                ctx.stroke();
+
+                ctx.strokeStyle = "rgba(255,255,255,0.6)";
+
+                ctx.lineWidth = 2;
+
+                ctx.stroke();
+
+
+
+                let beerGradient = ctx.createLinearGradient(-20, 0, 15, 0);
+
+                beerGradient.addColorStop(0, '#e67e22');
+
+                beerGradient.addColorStop(0.3, '#f1c40f');
+
+                beerGradient.addColorStop(0.8, '#f39c12');
+
+                beerGradient.addColorStop(1, '#d35400');
+
+
+
+                ctx.fillStyle = beerGradient;
+
+                ctx.beginPath();
+
+                ctx.roundRect(-22, -20, 38, 50, [4, 4, 10, 10]);
+
+                ctx.fill();
+
+                ctx.strokeStyle = "#3a1e05";
+
+                ctx.lineWidth = 3;
+
+                ctx.stroke();
+
+
+
+                ctx.fillStyle = "rgba(255, 255, 255, 0.35)";
+
+                ctx.beginPath();
+
+                ctx.roundRect(-18, -15, 6, 40, 3);
+
+                ctx.fill();
+
+
+
+                ctx.fillStyle = "rgba(255, 255, 255, 0.15)";
+
+                ctx.beginPath();
+
+                ctx.roundRect(-8, -15, 4, 40, 2);
+
+                ctx.fill();
+
+
+
+                ctx.fillStyle = "#ffffff";
+
+                ctx.beginPath();
+
+                ctx.arc(-18, -20, 10, 0, Math.PI * 2);
+
+                ctx.arc(-8, -24, 12, 0, Math.PI * 2);
+
+                ctx.arc(4, -22, 11, 0, Math.PI * 2);
+
+                ctx.arc(15, -18, 9, 0, Math.PI * 2);
+
+                ctx.fill();
+
+                ctx.strokeStyle = "#bdc3c7";
+
+                ctx.lineWidth = 1.5;
+
+                ctx.stroke();
+
+
+
+                ctx.save();
+
+                ctx.translate(-5, -5);
+
+                ctx.rotate(-0.1 + this.wingAngle * 1.2);
+
+
+
+                let wingGradient = ctx.createLinearGradient(-50, -30, 0, 0);
+
+                wingGradient.addColorStop(0, '#ffffff');
+
+                wingGradient.addColorStop(1, '#d5dbdb');
+
+
+
+                ctx.fillStyle = wingGradient;
+
+                ctx.strokeStyle = "#2c3e50";
+
+                ctx.lineWidth = 3;
+
+
+
+                ctx.beginPath();
+
+                ctx.moveTo(0, -5);
+
+                ctx.quadraticCurveTo(-30, -40, -60, -20);
+
+                ctx.quadraticCurveTo(-45, -10, -25, -2);
+
+                ctx.quadraticCurveTo(-50, 15, -20, 12);
+
+                ctx.quadraticCurveTo(-30, 25, -5, 5);
+
+                ctx.closePath();
+
+                ctx.fill();
+
+                ctx.stroke();
+
+
+
+                ctx.restore();
+
+                ctx.restore();
+
+            },
+
+
+
+            update: function() {
+
+                if (!gameStarted) return;
+
+
+
+                this.velocity += gravity;
+
+                this.y += this.velocity;
+
+
+
+                if (frames % 3 === 0) {
+
+                    particles.push(new Particle(this.x - 20, this.y + 10));
+
+                }
+
+
+
+                if (this.y + 25 >= canvas.height - 50) {
+
+                    this.y = canvas.height - 50 - 25;
+
+                    triggerGameOver();
+
+                }
+
+
+
+                if (this.y - 25 <= 0) {
+
+                    this.y = 25;
+
+                    this.velocity = 0;
+
+                }
+
+            },
+
+
+
+            flap: function() {
+
+                this.velocity = -jump;
+
+                for(let i=0; i<6; i++) {
+
+                    particles.push(new Particle(this.x - 15, this.y + 15));
+
+                }
+
+            }
+
+        };
+
+
+
+        const pipes = {
+
+            items: [],
+
+            width: 75,
+
+            gap: 160,
+
+
+
+            draw: function() {
+
+                for (let i = 0; i < this.items.length; i++) {
+
+                    let p = this.items[i];
+
+                    this.drawPipe3D(p.x, 0, this.width, p.top, true);
+
+                    let bottomY = p.top + this.gap;
+
+                    let bottomHeight = canvas.height - 50 - bottomY;
+
+                    this.drawPipe3D(p.x, bottomY, this.width, bottomHeight, false);
+
+                }
+
+            },
+
+
+
+            drawPipe3D: function(x, y, width, height, isTop) {
+
+                ctx.save();
+
+                let pipeGrad = ctx.createLinearGradient(x, 0, x + width, 0);
+
+                pipeGrad.addColorStop(0, '#5e2a04');
+
+                pipeGrad.addColorStop(0.25, '#d35400');
+
+                pipeGrad.addColorStop(0.5, '#f39c12');
+
+                pipeGrad.addColorStop(0.75, '#e67e22');
+
+                pipeGrad.addColorStop(1, '#3d1a02');
+
+
+
+                ctx.fillStyle = pipeGrad;
+
+                ctx.fillRect(x, y, width, height);
+
+
+
+                let collarHeight = 28;
+
+                let collarY = isTop ? y + height - collarHeight : y;
+
+
+
+                let collarGrad = ctx.createLinearGradient(x - 6, 0, x + width + 6, 0);
+
+                collarGrad.addColorStop(0, '#421d02');
+
+                collarGrad.addColorStop(0.3, '#f39c12');
+
+                collarGrad.addColorStop(0.6, '#f1c40f');
+
+                collarGrad.addColorStop(1, '#2d1301');
+
+
+
+                ctx.fillStyle = collarGrad;
+
+                ctx.beginPath();
+
+                ctx.roundRect(x - 6, collarY, width + 12, collarHeight, 4);
+
+                ctx.fill();
+
+
+
+                ctx.strokeStyle = '#1f0d01';
+
+                ctx.lineWidth = 2.5;
+
+                ctx.strokeRect(x, y, width, height);
+
+                ctx.strokeRect(x - 6, collarY, width + 12, collarHeight);
+
+
+
+                ctx.fillStyle = '#fce205';
+
+                for (let r = x - 2; r <= x + width + 2; r += 16) {
+
+                    let ry = collarY + collarHeight / 2;
+
+                    ctx.beginPath();
+
+                    ctx.arc(r, ry, 2.5, 0, Math.PI * 2);
+
+                    ctx.fill();
+
+                }
+
+
+
+                ctx.restore();
+
+            },
+
+
+
+            update: function() {
+
+                if (!gameStarted) return;
+
+
+
+                if (frames % 110 === 0) {
+
+                    let minHeight = 60;
+
+                    let maxHeight = canvas.height - 50 - this.gap - minHeight;
+
+                    let topHeight = Math.floor(Math.random() * (maxHeight - minHeight + 1)) + minHeight;
+
+
+
+                    this.items.push({
+
+                        x: canvas.width,
+
+                        top: topHeight,
+
+                        passed: false
+
+                    });
+
+                }
+
+
+
+                for (let i = 0; i < this.items.length; i++) {
+
+                    let p = this.items[i];
+
+                    p.x -= gameSpeed;
+
+
+
+                    let beerRadius = 20;
+
+                    if (beer.x + beerRadius > p.x - 6 && beer.x - beerRadius < p.x + this.width + 6) {
+
+                        if (beer.y - beerRadius < p.top || beer.y + beerRadius > p.top + this.gap) {
+
+                            triggerGameOver();
+
+                        }
+
+                    }
+
+
+
+                    if (p.x + this.width < beer.x && !p.passed) {
+
+                        p.passed = true;
+
+                        score++;
+
+                    }
+
+                }
+
+
+
+                if (this.items.length > 0 && this.items[0].x < -100) {
+
+                    this.items.shift();
+
+                }
+
+            }
+
+        };
+
+
+
+        function drawBackground() {
+
+            let bgGrad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+
+            bgGrad.addColorStop(0, '#1a0b03');
+
+            bgGrad.addColorStop(0.6, '#3a1a05');
+
+            bgGrad.addColorStop(1, '#110702');
+
+            ctx.fillStyle = bgGrad;
+
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+
+            ctx.save();
+
+            let bgOffset = (frames * 0.5) % 200;
+
+            
+
+            ctx.fillStyle = "rgba(20, 8, 2, 0.6)";
+
+            ctx.fillRect(0, 180, canvas.width, 12);
+
+            ctx.fillRect(0, 300, canvas.width, 12);
+
+
+
+            for (let x = -bgOffset; x < canvas.width + 50; x += 35) {
+
+                ctx.fillStyle = (x % 70 === 0) ? "rgba(211, 84, 0, 0.25)" : "rgba(241, 196, 15, 0.2)";
+
+                ctx.fillRect(x, 135, 12, 45);
+
+                ctx.fillRect(x + 15, 255, 14, 45);
+
+            }
+
+            ctx.restore();
+
+
+
+            ctx.save();
+
+            ctx.font = "bold 28px 'Courier New', monospace";
+
+            ctx.shadowColor = "#f39c12";
+
+            ctx.shadowBlur = 15;
+
+            ctx.fillStyle = "#fff8e7";
+
+            ctx.fillText("âš¡ BEER PUB 3D âš¡", canvas.width / 2 - 120, 50);
+
+            ctx.restore();
+
+        }
+
+
+
+        function drawFloor() {
+
+            ctx.save();
+
+            let floorY = canvas.height - 50;
+
+
+
+            let floorGrad = ctx.createLinearGradient(0, floorY, 0, canvas.height);
+
+            floorGrad.addColorStop(0, '#4a4a4a');
+
+            floorGrad.addColorStop(0.2, '#2b2b2b');
+
+            floorGrad.addColorStop(1, '#111');
+
+            ctx.fillStyle = floorGrad;
+
+            ctx.fillRect(0, floorY, canvas.width, 50);
+
+
+
+            ctx.fillStyle = '#f1c40f';
+
+            ctx.fillRect(0, floorY, canvas.width, 4);
+
+
+
+            let stripeOffset = (frames * gameSpeed) % 40;
+
+            ctx.fillStyle = "rgba(241, 196, 15, 0.15)";
+
+            for (let x = -stripeOffset; x < canvas.width; x += 40) {
+
+                ctx.beginPath();
+
+                ctx.moveTo(x, floorY + 4);
+
+                ctx.lineTo(x + 20, canvas.height);
+
+                ctx.lineTo(x + 35, canvas.height);
+
+                ctx.lineTo(x + 15, floorY + 4);
+
+                ctx.fill();
+
+            }
+
+            ctx.restore();
+
+        }
+
+
+
+        function drawUI() {
+
+            if (gameStarted && !gameOver) {
+
+                ctx.save();
+
+                ctx.font = "bold 36px Arial";
+
+                ctx.fillStyle = "#ffffff";
+
+                ctx.shadowColor = "rgba(0,0,0,0.8)";
+
+                ctx.shadowBlur = 6;
+
+                ctx.fillText(score, canvas.width / 2 - 10, 60);
+
+                ctx.restore();
+
+            }
+
+
+
+            if (!gameStarted && !gameOver && !enteringInitials) {
+
+                ctx.save();
+
+                ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+
+                ctx.font = "bold 42px Arial";
+
+                ctx.fillStyle = "#f1c40f";
+
+                ctx.textAlign = "center";
+
+                ctx.shadowColor = "#000";
+
+                ctx.shadowBlur = 10;
+
+                ctx.fillText("FLAPPY BEER 3D", canvas.width / 2, 170);
+
+
+
+                ctx.font = "18px Arial";
+
+                ctx.fillStyle = "#ffffff";
+
+                ctx.fillText("Cliquez ou ESPACE pour Jouer", canvas.width / 2, 220);
+
+
+
+                ctx.fillStyle = "#e67e22";
+
+                ctx.font = "bold 18px 'Courier New'";
+
+                ctx.fillText("--- TOP SCORES MONDIAUX ---", canvas.width / 2, 265);
+
+                
+
+                highScores.forEach((entry, index) => {
+
+                    ctx.fillStyle = index === 0 ? "#f1c40f" : "#ffffff";
+
+                    ctx.font = "bold 20px 'Courier New'";
+
+                    ctx.fillText(`${index + 1}.  ${entry.name}  ---  ${entry.score}`, canvas.width / 2, 305 + (index * 32));
+
+                });
+
+
+
+                ctx.restore();
+
+            }
+
+
+
+            if (enteringInitials) {
+
+                ctx.save();
+
+                ctx.fillStyle = "rgba(0, 0, 0, 0.88)";
+
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+
+                ctx.font = "bold 28px Arial";
+
+                ctx.fillStyle = "#f1c40f";
+
+                ctx.textAlign = "center";
+
+                ctx.fillText("NOUVEAU TOP SCORE !", canvas.width / 2, 80);
+
+
+
+                ctx.font = "18px Arial";
+
+                ctx.fillStyle = "#fff";
+
+                ctx.fillText(`Score : ${score}`, canvas.width / 2, 115);
+
+                ctx.fillText("Entrez vos 3 initiales :", canvas.width / 2, 145);
+
+
+
+                ctx.font = "bold 44px 'Courier New'";
+
+                let startX = canvas.width / 2 - 75;
+
+                for (let i = 0; i < 3; i++) {
+
+                    ctx.fillStyle = i === activeInitialIndex ? "#ff2a2a" : "#ffffff";
+
+                    ctx.fillText(currentInitials[i], startX + (i * 55), 215);
+
+                    if (i === activeInitialIndex) {
+
+                        ctx.fillRect(startX + (i * 55) - 12, 225, 35, 4);
+
+                    }
+
+                }
+
+
+
+                ctx.fillStyle = "#2a2a38";
+
+                ctx.beginPath();
+
+                ctx.roundRect(canvas.width / 2 - 170, 255, 100, 42, 8);
+
+                ctx.fill();
+
+                ctx.strokeStyle = "#ff2a2a";
+
+                ctx.lineWidth = 2;
+
+                ctx.stroke();
+
+                ctx.font = "bold 18px Arial";
+
+                ctx.fillStyle = "#ffffff";
+
+                ctx.fillText("â—„ GAUCHE", canvas.width / 2 - 120, 281);
+
+
+
+                ctx.fillStyle = "#2a2a38";
+
+                ctx.beginPath();
+
+                ctx.roundRect(canvas.width / 2 + 70, 255, 100, 42, 8);
+
+                ctx.fill();
+
+                ctx.strokeStyle = "#ff2a2a";
+
+                ctx.lineWidth = 2;
+
+                ctx.stroke();
+
+                ctx.fillStyle = "#ffffff";
+
+                ctx.fillText("DROITE â–º", canvas.width / 2 + 120, 281);
+
+
+
+                ctx.fillStyle = "#ff2a2a";
+
+                ctx.beginPath();
+
+                ctx.roundRect(canvas.width / 2 - 100, 330, 200, 48, 10);
+
+                ctx.fill();
+
+                ctx.shadowColor = "rgba(255, 42, 42, 0.5)";
+
+                ctx.shadowBlur = 15;
+
+                ctx.font = "bold 18px Arial";
+
+                ctx.fillStyle = "#ffffff";
+
+                ctx.fillText("VALIDER ðŸ¤˜", canvas.width / 2, 360);
+
+
+
+                ctx.restore();
+
+            }
+
+
+
+            if (gameOver && !enteringInitials) {
+
+                ctx.save();
+
+                ctx.fillStyle = "rgba(0, 0, 0, 0.75)";
+
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+
+                let panelX = canvas.width / 2 - 210;
+
+                let panelY = 35;
+
+                
+
+                ctx.fillStyle = "#1b1410";
+
+                ctx.beginPath();
+
+                ctx.roundRect(panelX, panelY, 420, 430, 14);
+
+                ctx.fill();
+
+                ctx.strokeStyle = "#f1c40f";
+
+                ctx.lineWidth = 3;
+
+                ctx.stroke();
+
+
+
+                ctx.font = "bold 30px Arial";
+
+                ctx.fillStyle = "#e74c3c";
+
+                ctx.textAlign = "center";
+
+                ctx.fillText("GAME OVER", canvas.width / 2, panelY + 45);
+
+
+
+                ctx.font = "bold 20px Arial";
+
+                ctx.fillStyle = "#fff";
+
+                ctx.fillText("Ton Score : " + score, canvas.width / 2, panelY + 80);
+
+
+
+                ctx.fillStyle = "#f39c12";
+
+                ctx.font = "bold 18px 'Courier New'";
+
+                ctx.fillText("--- TOP SCORES MONDIAUX ---", canvas.width / 2, panelY + 120);
+
+
+
+                highScores.forEach((entry, index) => {
+
+                    ctx.fillStyle = index === 0 ? "#f1c40f" : "#ffffff";
+
+                    ctx.font = "bold 22px 'Courier New'";
+
+                    ctx.fillText(`${index + 1}.  ${entry.name}  ---  ${entry.score}`, canvas.width / 2, panelY + 160 + (index * 42));
+
+                });
+
+
+
+                ctx.font = "bold 17px Arial";
+
+                ctx.fillStyle = "#f1c40f";
+
+                ctx.fillText("Cliquez pour Recommencer", canvas.width / 2, panelY + 385);
+
+
+
+                ctx.restore();
+
+            }
+
+        }
+
+
+
+        function triggerGameOver() {
+
+            let isHighScore = highScores.some(entry => score > entry.score) || highScores.length < 3;
+
+            if (isHighScore && score > 0) {
+
+                enteringInitials = true;
+
+                gameOver = false;
+
+                currentInitials = ["A", "A", "A"];
+
+                activeInitialIndex = 0;
+
+            } else {
+
+                gameOver = true;
+
+            }
+
+            gameStarted = false;
+
+        }
+
+
+
+        function resetGame() {
+
+            beer.y = 220;
+
+            beer.velocity = 0;
+
+            pipes.items = [];
+
+            particles = [];
+
+            score = 0;
+
+            frames = 0;
+
+            gameOver = false;
+
+            enteringInitials = false;
+
+            gameStarted = true;
+
+        }
+
+
+
+        function handleInput(e) {
+
+            const rect = canvas.getBoundingClientRect();
+
+            const scaleX = canvas.width / rect.width;
+
+            const scaleY = canvas.height / rect.height;
+
+            
+
+            const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+
+            const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+
+
+
+            if (enteringInitials && clientX !== undefined) {
+
+                const x = (clientX - rect.left) * scaleX;
+
+                const y = (clientY - rect.top) * scaleY;
+
+
+
+                if (x >= canvas.width / 2 - 170 && x <= canvas.width / 2 - 70 && y >= 255 && y <= 297) {
+
+                    let currentIndex = alphabet.indexOf(currentInitials[activeInitialIndex]);
+
+                    currentIndex = (currentIndex - 1 + alphabet.length) % alphabet.length;
+
+                    currentInitials[activeInitialIndex] = alphabet[currentIndex];
+
+                    return;
+
+                }
+
+
+
+                if (x >= canvas.width / 2 + 70 && x <= canvas.width / 2 + 170 && y >= 255 && y <= 297) {
+
+                    let currentIndex = alphabet.indexOf(currentInitials[activeInitialIndex]);
+
+                    currentIndex = (currentIndex + 1) % alphabet.length;
+
+                    currentInitials[activeInitialIndex] = alphabet[currentIndex];
+
+                    return;
+
+                }
+
+
+
+                if (x >= canvas.width / 2 - 100 && x <= canvas.width / 2 + 100 && y >= 330 && y <= 378) {
+
+                    activeInitialIndex++;
+
+                    if (activeInitialIndex > 2) {
+
+                        saveHighScore();
+
+                    }
+
+                    return;
+
+                }
+
+                return;
+
+            }
+
+
+
+            if (!gameStarted && !gameOver) {
+
+                gameStarted = true;
+
+                beer.flap();
+
+            } else if (gameStarted && !gameOver) {
+
+                beer.flap();
+
+            } else if (gameOver) {
+
+                resetGame();
+
+            }
+
+        }
+
+
+
+        window.addEventListener("keydown", function(e) {
+
+            if (e.code === "Space" && (document.activeElement.tagName !== "INPUT")) {
+
+                e.preventDefault();
+
+                if (enteringInitials) {
+
+                    activeInitialIndex++;
+
+                    if (activeInitialIndex > 2) {
+
+                        saveHighScore();
+
+                    }
+
+                } else {
+
+                    handleInput(e);
+
+                }
+
+            } else if (enteringInitials && e.code === "ArrowRight") {
+
+                let currentIndex = alphabet.indexOf(currentInitials[activeInitialIndex]);
+
+                currentInitials[activeInitialIndex] = alphabet[(currentIndex + 1) % alphabet.length];
+
+            } else if (enteringInitials && e.code === "ArrowLeft") {
+
+                let currentIndex = alphabet.indexOf(currentInitials[activeInitialIndex]);
+
+                currentInitials[activeInitialIndex] = alphabet[(currentIndex - 1 + alphabet.length) % alphabet.length];
+
+            }
+
+        });
+
+
+
+        canvas.addEventListener("click", function(e) {
+
+            handleInput(e);
+
+        });
+
+
+
+        canvas.addEventListener("touchstart", function(e) {
+
+            e.preventDefault();
+
+            handleInput(e);
+
+        }, { passive: false });
+
+
+
+        function saveHighScore() {
+
+            let playerName = currentInitials.join("");
+
+            highScores.push({ name: playerName, score: score });
+
+            highScores.sort((a, b) => b.score - a.score);
+
+            highScores = highScores.slice(0, 3);
+
+            
+
+            scoresDb.set(highScores);
+
+            
+
+            enteringInitials = false;
+
+            gameOver = true;
+
+        }
+
+
+
+        function loop() {
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+
+            drawBackground();
+
+            pipes.update();
+
+            pipes.draw();
+
+
+
+            for (let i = particles.length - 1; i >= 0; i--) {
+
+                particles[i].update();
+
+                particles[i].draw();
+
+                if (particles[i].opacity <= 0) {
+
+                    particles.splice(i, 1);
+
+                }
+
+            }
+
+
+
+            drawFloor();
+
+            beer.update();
+
+            beer.draw();
+
+            drawUI();
+
+
+
+            frames++;
+
+            requestAnimationFrame(loop);
+
+        }
+
+
+
+        loop();
+
     </script>
+
 </body>
+
 </html>
